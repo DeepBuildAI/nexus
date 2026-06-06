@@ -85,7 +85,7 @@ ENV CARGO_NET_RETRY=10 \
 RUN --mount=type=cache,target=/root/.cargo/registry \
     --mount=type=cache,target=/root/.cargo/git \
     --mount=type=cache,id=cargo-install-${TARGETARCH},target=/root/.cargo/target \
-    cargo install --git https://github.com/nexi-lab/nexus-vfs --bin nexusd-cluster nexus-cluster && \
+    cargo install --git https://github.com/DeepBuildAI/nexus-vfs --rev 8ee8e5c --bin nexusd-cluster nexus-cluster && \
     cp /root/.cargo/bin/nexusd-cluster /build/nexusd-cluster
 
 # ---------- Copy real application source and reinstall local package ----------
